@@ -19,7 +19,7 @@
     flex-direction: column; 
     overflow: hidden; 
 }
-
+    
 .calculator {
     width: 100%;
     max-width: 600px;
