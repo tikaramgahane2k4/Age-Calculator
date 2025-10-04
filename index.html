@@ -36,9 +36,11 @@
         let userInput = document.querySelector('#date')
         userInput.max = new Date().toISOString().split("T")[0];
 
+        let btn = document.querySelector('#btn')
         let ageCal = document.querySelector('#age-cal')
+        let inp = document.querySelector('.input_goup')
 
-        btn.addEventListener('click', function () {
+        function ageCalc() {
 
             let birthDate = new Date(userInput.value);
 
@@ -80,11 +82,20 @@
 
             ageCal.innerHTML = `You are <span>${y3}</span> years, <span>${m3}</span> months and <span>${d3}</span> days old`;
 
-        })
+        }
 
         function currentDate(year, month) {
             return new Date(year, month, 0).getDate();
         }
+
+        btn.addEventListener('click', ageCalc);
+
+        inp.addEventListener('keydown', function(e){
+            if (e.key == "Enter"){
+                ageCalc()
+            }
+        });
+        
     </script>
 </body>
 
